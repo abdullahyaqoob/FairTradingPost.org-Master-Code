@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="name">
+    <input type="email" name="" id="email">
+    <button onclick="myFunction()">try</button>
+
+    <script>
+        function myFunction() {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", 'https://api.getresponse.com/v3/contacts', true);
+            xhr.setRequestHeader({'Content-Type': 'application/json'}, {'X-Auth-Token': 'api-key 2k2b6nc004oy2ska7n4qmendkt3itnod'});
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('X-Auth-Token', 'api-key 2k2b6nc004oy2ska7n4qmendkt3itnod');
+            xhr.send(JSON.stringify({
+                name: name,
+                email: email,
+                campaign: {
+                    campaignId: "Z8UWT",
+                },
+            }));
+        }
+    </script>
+</body>
+
+</html>
